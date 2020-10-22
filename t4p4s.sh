@@ -656,6 +656,9 @@ if [ "$(optvalue run)" != off ]; then
         sleep $DBGWAIT
         sudo -E ${DEBUGGER} -q -ex run --args "${OPTS[executable]}" ${EXEC_OPTS}
     fi
+else
+    [ "$ARCH" == "dpdk" ] && EXEC_OPTS="${OPTS[ealopts]} -- ${OPTS[cmdopts]}"
+    echo "Command to run: ${OPTS[executable]} ${EXEC_OPTS}"
 fi
 
 exit_program $ERROR_CODE

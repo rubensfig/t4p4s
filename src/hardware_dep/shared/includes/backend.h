@@ -74,7 +74,6 @@ typedef struct time_measure_s{
     #define COUNTER_ECHO(oc,print_template){ \
             if(oc.counter == 0) { \
                 oc.start_cycle = rte_get_tsc_cycles(); \
-                oc.counter++; \
             } \
             if(rte_get_tsc_cycles() - oc.start_cycle > rte_get_timer_hz()){ \
                 fdebug(print_template,oc.counter); \

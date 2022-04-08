@@ -1,0 +1,9 @@
+# dependencies
+
+lld net-tools gcc g++
+
+# Grub config
+
+GRUB_CMDLINE_LINUX="default_hugepagesz=1024M hugepagesz=1024M hugepages=96 rhgb intel_iommu=on iommu=pt isolcpus=29,30"
+
+
